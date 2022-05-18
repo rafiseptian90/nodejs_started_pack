@@ -6,6 +6,11 @@ if (process.env.APP_ENV !== 'production') {
 const express = require('express')
 const app = express()
 
+// parse content-type: application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }))
+// parse content-type: application/json
+app.use(express.json())
+
 // setup CORS
 const cors = require('cors')
 app.use(cors())
